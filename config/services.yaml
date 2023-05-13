@@ -28,19 +28,9 @@ services:
 
     App\Provider\RarArchiver:
         # @todo: configure provider
-        factory: ['RarArchive', 'open']
-        arguments:
-            - 'archive.rar'
-            - null
-            - null
-        calls:
-            - [setPassword, ['password']]
 
     App\Provider\ZipArchiver:
         # @todo: configure provider
-        arguments:
-            - 'archive.zip'
-        
     
     archiver:
         class: App\Service\ArchiverService

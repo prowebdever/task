@@ -55,18 +55,6 @@ class ArchiverService
          *       - make sure to throw InvalidArchiverException if there are no archivers found for a given file
          *       - choose best archiver based on compression rate
          */
-
-
-
-         switch ($fileExtension) {
-            case 'rar':
-                return new RarArchiver();
-            case 'zip':
-                return new ZipArchiver();
-            default:
-                throw new InvalidArchiverException(sprintf('No archiver found for file extension "%s"', $fileExtension));
-        }
-        
     }
 
     private function getFileExtension(string $filename): string
@@ -74,9 +62,6 @@ class ArchiverService
         /**
          * @todo Implement getting extension form filename
          */
-
-        $extension = pathinfo($filename, PATHINFO_EXTENSION);
-        return $extension;
     }
 
 }

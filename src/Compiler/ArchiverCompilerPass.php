@@ -21,10 +21,5 @@ class ArchiverCompilerPass implements CompilerPassInterface
         /**
          * @todo Implement it
          */
-
-        //  $definition = $containerBuilder->getDefinition(ArchiverService::class);
-        //  $definition->addMethodCall('addArchiver', [new Reference(RarArchiver::class)]);
-        //  $definition->addMethodCall('addArchiver', [new Reference(ZipArchiver::class)]);
-
     }
 }
