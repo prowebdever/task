@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="symfony-compiler-pass" default="build" basedir=".">
+ 
+    <target name="build">
+        <phingcall target="composerInstall"/>
+        <phingcall target="testAll"/>
+    </target>
+
+    <target name="composerInstall">
+        <exec passthru="true"
+            checkreturn="false"
+            command="cd ${project.basedir}; composer install --prefer-source --no-interaction"/>
+        <exec command="cd ${project.basedir}; chmod +x bin/phpunit" />
+    </target>
+ 
+    <target name="testAll">
+        <exec passthru="true"
+            checkreturn="false"
+            command="${project.basedir}/bin/phpunit"/>
+    </target>
+ 
+</project>
